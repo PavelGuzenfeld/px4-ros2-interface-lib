@@ -10,72 +10,48 @@ Fork: https://github.com/PavelGuzenfeld/px4-ros2-interface-lib
 
 ---
 
-## Already Merged Upstream
+## Already Merged Upstream (branches deleted from fork)
 
-| Branch | PR | Status |
-|---|---|---|
-| `feat/home-position-setter-108` | [#189](https://github.com/Auterion/px4-ros2-interface-lib/pull/189) | MERGED |
-| `fix/map-projection-prefix-152` | [#188](https://github.com/Auterion/px4-ros2-interface-lib/pull/188) | MERGED |
-| `fix/vtol-status-timeout` | [#186](https://github.com/Auterion/px4-ros2-interface-lib/pull/186) | MERGED |
-
-**Action:** Clean up these local branches — they can be deleted from the fork.
-
----
-
-## Open PR
-
-| Branch | PR | Status |
-|---|---|---|
-| `refactor/mode-executor-use-vehicle-command-sender` | [#192](https://github.com/Auterion/px4-ros2-interface-lib/pull/192) | OPEN |
-
----
-
-## To Contribute — Substantive Features
-
-### Priority 1: Small / Easy PRs
-
-| Branch | Commits | Description | Notes |
-|---|---|---|---|
-| `single_compatibility_check_backport_1.6.1` | 1 | Only call `messageCompatibilityCheck` once | Clean single commit, easy review |
-| `rm-local-position-msg-check` | 2 | Remove local position & manual control message checks | Small cleanup |
-| `python-pre-commit` | 1 | Add Black to pre-commit for Python formatting | Tooling improvement |
-
-### Priority 2: Feature Additions
-
-| Branch | Commits | Description | Notes |
-|---|---|---|---|
-| `autonomous_acro` | 3 | Builder pattern for mode Settings, `prevent_arming` flag, acro yaw control, autonomous power loop example | Self-contained feature |
-| `cruise_control_mode` | 2 | New cruise control mode with diff-drive setpoint type | Rover feature |
-| `manual_rover_control_mode` | 3 | Manual rover control (includes cruise_control commits) | Depends on cruise_control_mode |
-
-### Priority 3: Large Feature (needs rebase/cleanup)
-
-| Branch | Commits | Description | Notes |
-|---|---|---|---|
-| `feat/enable-flight-modes-to-keep-alive-on-fmu-conn-loss` | 15 | FW control API, lateral/longitudinal control setpoints, keep-alive on FMU connection loss | **Main branch** — `feat/fw-ctrl-and-flight-mode-keep-alive` (7 commits) is an older subset. Contribute only this one. Needs rebase on upstream/main and likely squash into logical commits. |
-
-### Priority 4: Needs Evaluation
-
-| Branch | Commits | Description | Notes |
-|---|---|---|---|
-| `modify-executor-commandsync-function` | 1 (+ 2 version fixes) | Don't pass executor ID if not in charge yet | Check if still relevant after #192 merges |
-
----
-
-## Not Contributing (CI / Test / WIP / Stale)
-
-| Branch | Reason |
+| Branch | PR |
 |---|---|
-| `buidljet` | CI infra (buildjet runners), typo in name |
-| `fix-ci` | CI fixes, partially superseded by upstream |
-| `release/1.16` | Release branch CI tweak |
-| `release/1.5.1` | Release branch CI tweak |
-| `hackathon` | Experimental |
-| `prerelease/0.0.200` | Test release |
-| `test/0.0.0` | Test release |
-| `test_build` | Test build |
-| `interrupting-executor-example` | WIP |
-| `test-BodyframeDynamicSetpoint-requirements` | WIP testing |
-| `0.0.3-message-fix` | Old message removal, likely stale |
+| `feat/home-position-setter-108` | [#189](https://github.com/Auterion/px4-ros2-interface-lib/pull/189) |
+| `fix/map-projection-prefix-152` | [#188](https://github.com/Auterion/px4-ros2-interface-lib/pull/188) |
+| `fix/vtol-status-timeout` | [#186](https://github.com/Auterion/px4-ros2-interface-lib/pull/186) |
+| `single_compatibility_check_backport_1.6.1` | Already upstream (Beat Küng's commit `84b863e`), branch deleted |
 
-**Action:** Consider deleting these from the fork after confirming nothing valuable remains.
+---
+
+## Open PR (your work)
+
+| Branch | PR | CI | Review |
+|---|---|---|---|
+| `refactor/mode-executor-use-vehicle-command-sender` | [#192](https://github.com/Auterion/px4-ros2-interface-lib/pull/192) | All green | Awaiting maintainer review |
+
+---
+
+## Other People's Branches on Fork (not your commits)
+
+These branches live on the fork but contain commits by Auterion employees, not by you.
+They should be cleaned up (deleted) from the fork.
+
+| Branch | Author | Notes |
+|---|---|---|
+| `autonomous_acro` | Auterion | Builder pattern, acro mode |
+| `cruise_control_mode` | Auterion | Cruise control + diff-drive |
+| `manual_rover_control_mode` | Auterion | Rover control (includes cruise_control) |
+| `feat/enable-flight-modes-to-keep-alive-on-fmu-conn-loss` | Auterion | FW control API + keep-alive |
+| `feat/fw-ctrl-and-flight-mode-keep-alive` | Auterion | Older subset of above |
+| `rm-local-position-msg-check` | bertug@auterion.com | Message check removal |
+| `python-pre-commit` | guillaume | Add Black pre-commit |
+| `modify-executor-commandsync-function` | Auterion | Executor ID fix |
+| `buidljet` | Auterion | CI runners |
+| `fix-ci` | Auterion | CI fixes |
+| `release/1.16` | Auterion | Release branch |
+| `release/1.5.1` | Auterion | Release branch |
+| `hackathon` | Auterion | Experimental |
+| `prerelease/0.0.200` | Auterion | Test release |
+| `test/0.0.0` | Auterion | Test release |
+| `test_build` | Auterion | Test build |
+| `interrupting-executor-example` | Auterion | WIP |
+| `test-BodyframeDynamicSetpoint-requirements` | Auterion | WIP testing |
+| `0.0.3-message-fix` | Auterion | Old message removal |
